@@ -32,8 +32,8 @@ public class App
 
     private static void login() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String text  = "Đăng nhập bằng tài khoản";
-        //driver.findElement(By.xpath("//android.view.View[contains(@content-desc", text)")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElementByXPath("//android.view.View[contains(@content-desc,'Đăng nhập bằng tài khoản')]").click();
     }
 
     
