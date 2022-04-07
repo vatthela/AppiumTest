@@ -1,4 +1,4 @@
-package pageobject1;
+package pageobject;
 
 public class login {
     

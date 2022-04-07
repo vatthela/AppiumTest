@@ -1,4 +1,4 @@
-package pageobject1;
+package pageobject;
 
 
 import java.net.URL;
