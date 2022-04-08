@@ -1,6 +1,6 @@
 package pageobject;
 
-
+import pageobject.Login;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +19,8 @@ import io.appium.java_client.MobileElement;
 public class App 
 {
     static AppiumDriver<MobileElement> driver;
+    private static Login login = new Login(null);
+
     public static void main( String[] args )
     {
         try{
@@ -26,22 +28,9 @@ public class App
          }catch(Exception exp){
              System.out.println(exp.getCause());
              System.out.println(exp.getMessage());  
-         };
-         login();
-
+        };
+        login.loginByAccount();
     }
-
-    private static void login() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.findElementByXPath("//android.view.View[@content-desc=\"Đăng nhập bằng tài khoản\"]").click();
-        driver.findElementByAccessibilityId("Đăng nhập bằng tài khoản").click();
-
-       // driver.findElementByXPath("//android.view.View[contains(@content-desc,'Đăng nhập bằng tài khoản')]").click();
-       // driver.findElement(MobileBy.AccessibilityId("Số điện thoại của bạn")).sendKeys("0123456");
-       // driver.findElement(MobileBy.AccessibilityId("Đăng nhập bằng tài khoản"));
-        
-    }
-  
     
     
     public static void openApp() throws Exception{
