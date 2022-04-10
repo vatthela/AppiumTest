@@ -9,7 +9,7 @@ import io.appium.java_client.MobileElement;
 public class Login {
     
     static AppiumDriver<MobileElement> driver;
-    Login(String driver) {
+    Login (String driver) {
 
     }
 
