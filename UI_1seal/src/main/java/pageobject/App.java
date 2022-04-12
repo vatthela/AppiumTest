@@ -18,27 +18,32 @@ import io.appium.java_client.MobileElement;
  */
 public class App 
 {
-    static AppiumDriver<MobileElement> driver;
-    private static Login login = new Login();
+    static AppiumDriver<MobileElement> driver ;
+   // static Login login = new Login(driver);
 
     public static void main(String[] args)
-    {
+    {   
+       // AppiumDriver<MobileElement> driver;
         try{
-            openApp();
+            driver = openApp();
          }catch(Exception exp){
-             System.out.println(exp.getCause());
-             System.out.println(exp.getMessage());  
+             exp.printStackTrace();
+ 
         };
+        //System.out.println(driver);
+        // Login login = new Login(driver);
+        // login.loginByAccount();
+        Login login = new Login(driver);
         login.loginByAccount();
     }
     
     
-    public static void openApp() throws Exception{
-        
+    public static AppiumDriver<MobileElement> openApp() throws Exception{
+
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability("deviceName", "sdk_gphone64_x86_64");
+        cap.setCapability("deviceName", "Android SDK built for x86_64");
         cap.setCapability("platformName", "Android");
-        cap.setCapability("platformVersion", "12");
+        cap.setCapability("platformVersion", "10");
         cap.setCapability("appPackage", "com.vingroup.oneseal.QC");
         cap.setCapability("unicodeKeyboard", "true");
         cap.setCapability("appActivity", "com.example.saler.MainActivity");
@@ -46,8 +51,9 @@ public class App
         cap.setCapability("noReset", "true");
 
         URL url = new URL ("http://127.0.0.1:4723/wd/hub");
-        driver = new AppiumDriver<MobileElement>(url,cap);
-        System.out.println("App open");       
+        AppiumDriver<MobileElement> driver = new AppiumDriver<MobileElement>(url,cap);
+        System.out.println("App open");
+        return driver;
     }
 
 
