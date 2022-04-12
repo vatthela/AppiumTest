@@ -2,6 +2,7 @@ package testcase_qc;
 
 import static org.testng.Assert.assertTrue;
 
+import org.springframework.util.Assert;
 import org.testng.annotations.*;
 
 /**
@@ -14,10 +15,12 @@ public class AppTest
      */
     @Test
     public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    {   
+        int a = 4;
+        assertTrue( a == '4', "test" );
     }
     public void login(){
+
         
     }
 }
