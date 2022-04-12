@@ -19,9 +19,9 @@ import io.appium.java_client.MobileElement;
 public class App 
 {
     static AppiumDriver<MobileElement> driver;
-    private static Login login = new Login(null);
+    private static Login login = new Login();
 
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
         try{
             openApp();
@@ -47,9 +47,7 @@ public class App
 
         URL url = new URL ("http://127.0.0.1:4723/wd/hub");
         driver = new AppiumDriver<MobileElement>(url,cap);
-        System.out.println("App open");
-    
-
+        System.out.println("App open");       
     }
 
 

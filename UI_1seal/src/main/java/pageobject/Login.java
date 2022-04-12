@@ -8,10 +8,13 @@ import io.appium.java_client.MobileElement;
 
 public class Login {
     
-    static AppiumDriver<MobileElement> driver;
-    Login (String driver) {
+    //static AppiumDriver<MobileElement> driver;
+    public static AppiumDriver<MobileElement> driver;
+    //private AppiumDriver<MobileElement> driver;
 
-    }
+   // public Login (AppiumDriver<MobileElement> driver) {
+    //   this.driver = driver;
+   // }
 
     public void loginByAccount() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -21,6 +24,5 @@ public class Login {
        // driver.findElementByXPath("//android.view.View[contains(@content-desc,'Đăng nhập bằng tài khoản')]").click();
        // driver.findElement(MobileBy.AccessibilityId("Số điện thoại của bạn")).sendKeys("0123456");
        // driver.findElement(MobileBy.AccessibilityId("Đăng nhập bằng tài khoản"));
-        
     }
 }
