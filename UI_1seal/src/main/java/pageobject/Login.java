@@ -2,7 +2,6 @@ package pageobject;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.naming.spi.DirStateFactory.Result;
 
 import org.openqa.selenium.By;
 import org.springframework.util.Assert;
@@ -38,6 +37,8 @@ public class Login {
         
         MobileElement result = driver.findElementByXPath("//android.widget.TextView[@text=\"Open with 1SEAL QC\"]");
         String result1 = result.getText();
+
+        ScreenHandler.swipeuUp(appiumDriver);
        // driver.findElementByXPath("//android.view.View[contains(@content-desc,'Đăng nhập bằng tài khoản')]").click();
        // driver.findElement(MobileBy.AccessibilityId("Số điện thoại của bạn")).sendKeys("0123456");
        // driver.findElement(MobileBy.AccessibilityId("Đăng nhập bằng tài khoản"));
