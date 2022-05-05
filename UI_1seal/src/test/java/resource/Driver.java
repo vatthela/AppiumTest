@@ -22,7 +22,7 @@ public class Driver {
         cap.setCapability("deviceName", "Android SDK built for x86_64");
         cap.setCapability("platformName", "Android");
         cap.setCapability("platformVersion", "10");
-        cap.setCapability("appPackage", "com.vingroup.oneseal.QC");
+        cap.setCapability("appPackage", "com.vingroup.oneseal.UAT");
         cap.setCapability("unicodeKeyboard", "true");
         cap.setCapability("appActivity", "com.example.saler.MainActivity");
         cap.setCapability("fullReset", "false");
@@ -33,5 +33,10 @@ public class Driver {
         driver = new AndroidDriver<>(url, cap);
         System.out.println("App open");
         return driver;
+    }
+
+    public void clearDrive() {
+        driver.close();
+        driver.quit();
     }
 }

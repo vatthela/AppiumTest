@@ -4,16 +4,19 @@ import resource.Driver;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import pageobject.HomeMenu;
 import pageobject.Login;
 
 public class Testcase1 {
-
-    static AppiumDriver<MobileElement> driver ;
-
-  
+     static AppiumDriver<MobileElement> driver;
      public static void main(String[] args) throws Exception{
-        driver = Driver.openApp();
-        Login login = new Login(driver);
-        login.loginByAccount();
+          AppiumDriver<MobileElement> driver = Driver.openApp();
+          Login login = new Login(driver);
+          login.loginByAccount();
+          Thread.sleep(10000);
+          HomeMenu homemenu = new HomeMenu(driver);
+          homemenu.moveLogout();
+          Thread.sleep(3000);
+          homemenu.clickLogout();
      }
 }

@@ -2,7 +2,7 @@ package pageobject;
 
 import java.util.concurrent.TimeUnit;
 
-
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.openqa.selenium.By;
 import org.springframework.util.Assert;
 
@@ -15,9 +15,12 @@ import utils.ScreenHandler;
 
 public class Login {
     
-    //static AppiumDriver<MobileElement> driver;
     AppiumDriver<MobileElement> driver;
-    //private AppiumDriver<MobileElement> driver;
+
+    private By login_by_account = MobileBy.AccessibilityId("Đăng nhập bằng tài khoản");
+    private By username = MobileBy.xpath("//android.widget.EditText[@resource-id=\"username\"]");
+    private By passsword = MobileBy.xpath("//android.widget.EditText[@resource-id=\"password\"]");
+    private By countinue = MobileBy.xpath("//android.widget.Button[@text=\"Tiếp tục\"]");
 
    public Login (AppiumDriver<MobileElement> driver) {
       this.driver = driver;
@@ -25,20 +28,20 @@ public class Login {
 
     public void loginByAccount() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(login_by_account).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(username).sendKeys("linh05");
+        driver.findElement(passsword).sendKeys("123456@");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(countinue).click();
+        
 
         //driver.findElementByXPath("//android.view.View[@content-desc=\"Đăng nhập bằng tài khoản\"]").click();
-        driver.findElementByAccessibilityId("Đăng nhập bằng tài khoản").click();
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElementByXPath("//android.widget.EditText[@resource-id=\"username\"]").sendKeys("salm6qm3");
-        driver.findElementByXPath("//android.widget.EditText[@resource-id=\"password\"]").sendKeys("123456");
-        driver.findElementByXPath("//android.widget.Button[@text=\"Tiếp tục\"]").click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        //driver.findElementByAccessibilityId("Đăng nhập bằng tài khoản").click();
        
-        
-        MobileElement result = driver.findElementByXPath("//android.widget.TextView[@text=\"Open with 1SEAL QC\"]");
-        String result1 = result.getText();
+        //driver.findElementByXPath("//android.widget.EditText[@resource-id=\"username\"]").sendKeys("linh05");
+        //MobileElement result = driver.findElementByXPath("//android.widget.TextView[@text=\"Open with 1SEAL QC\"]");
+        //String result1 = result.getText();
 
         //ScreenHandler.swipeuUp(appiumDriver);
         //String result1 = result.getText();

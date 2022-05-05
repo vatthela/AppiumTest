@@ -1,9 +1,15 @@
 package testcase_qc;
 
-import static org.testng.Assert.assertTrue;
-
-import org.springframework.util.Assert;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
+import org.testng.asserts.*;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import pageobject.HomeMenu;
+import resource.Driver;
+
+
 
 /**
  * Unit test for simple App.
@@ -14,13 +20,11 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public  void shouldAnswerWithTrue() throws Exception
     {   
-        int a = 4;
-        assertTrue( a == '4', "test" );
-    }
-    public void login(){
+        AppiumDriver<MobileElement> driver = Driver.openApp();
 
-        
+        HomeMenu login = new HomeMenu(driver);
+        login.moveInfo();
     }
 }
