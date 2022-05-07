@@ -13,7 +13,7 @@ import io.appium.java_client.MobileElement;
 
 public class HomeMenu {
     AppiumDriver<MobileElement> driver;
-    private By move_home_menu = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"im_avatar\"]");
+    private By home_menu = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"im_avatar\"]");
     private By info = MobileBy.xpath("//android.view.View[@content-desc=\"Thông tin tài khoản\"]");
     private By kpi = MobileBy.AccessibilityId("Dự tính KPI và thưởng Mới");
     private By time_sheets = MobileBy.xpath("//android.view.View[contains(@content-desc=\"Công hưởng lương\")]");
@@ -33,7 +33,7 @@ public class HomeMenu {
 
     public HomeMenu(AppiumDriver<MobileElement> driver) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElement(move_home_menu).click();
+        driver.findElement(home_menu).click();
         this.driver = driver;
     }
     public void moveInfo(){
@@ -84,4 +84,6 @@ public class HomeMenu {
         }
         */
     }
+
+
 }

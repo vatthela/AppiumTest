@@ -35,7 +35,7 @@ public class Driver {
         return driver;
     }
 
-    public void clearDrive() {
+    public static void clearDrive() {
         driver.close();
         driver.quit();
     }
