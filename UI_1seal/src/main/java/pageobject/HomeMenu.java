@@ -23,7 +23,8 @@ public class HomeMenu {
     private By techsupport = MobileBy.xpath("//android.view.View[@content-desc=\"Báo lỗi ứng dụng\"]");
     private By policy = MobileBy.xpath("//android.view.View[@content-desc=\"Chính sách\"]");
     private By logout = MobileBy.xpath("//android.view.View[@content-desc=\"Đăng xuất\"]");
-    private By btn_logout = MobileBy.xpath("//android.widget.Button[@content-desc=\"ĐĂNG XUẤT\"]");
+    private By logout_btn = MobileBy.xpath("//android.widget.Button[@content-desc=\"ĐĂNG XUẤT\"]");
+    private By back_btn = MobileBy.AccessibilityId("btn_back");
 
 
     private By login_by_account1 = MobileBy.AccessibilityId("Đăng nhập bằng tài khoản");
@@ -32,7 +33,6 @@ public class HomeMenu {
 
 
     public HomeMenu(AppiumDriver<MobileElement> driver) {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(home_menu).click();
         this.driver = driver;
     }
@@ -65,14 +65,16 @@ public class HomeMenu {
         driver.findElement(logout).click();
     }
     public void clickLogout(){
-        driver.findElement(btn_logout).click();
+        driver.findElement(logout_btn).click();
+    }
+    public void clickBack(){
+        driver.findElement(back_btn).click();
     }
 
     public String getTextPolicy(){
         By name_policy = MobileBy.xpath("//android.view.View[@content-desc=\"Chính sách bán hàng tháng 4\"]");
-        String text_name_policy;
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        text_name_policy = driver.findElement(name_policy).getAttribute("content-desc");
+        String text_name_policy = driver.findElement(name_policy).getAttribute("content-desc");
         System.out.print(text_name_policy);
         return text_name_policy;
         /*
@@ -83,6 +85,11 @@ public class HomeMenu {
             System.out.print("Không có element");
         }
         */
+    }
+    public String getNameSa(){
+        By name_sa_txt = MobileBy.xpath("//android.view.View[contains(@content-desc,\"Auto\")]");
+        String text_name_sa = driver.findElement(name_sa_txt).getAttribute("content-desc");
+        return text_name_sa;
     }
 
 

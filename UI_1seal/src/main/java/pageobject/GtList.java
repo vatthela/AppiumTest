@@ -21,14 +21,16 @@ public class GtList {
     By search = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Tìm kiếm tên GT, SĐT, địa chỉ\"]");
     By edit_search = MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.widget.EditText");
     By cancel_search = MobileBy.xpath("//android.view.View[@content-desc=\"Huỷ\"]");
-    By result = MobileBy.xpath("//*[contains(@content-desc,\"Auto\")]");
+    By result_txt = MobileBy.xpath("//*[contains(@content-desc,\"Auto\")]");
+    By confirm_btn = MobileBy.xpath("(//android.widget.Button[@content-desc=\"Xác minh\"])[1]");
 
     public GtList(AppiumDriver<MobileElement> driver){
+        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         driver.findElement(customer_menu).click();
         this.driver = driver;
     }
 
-    public GtList navigate_customer_menu(){
+    public GtList navigateCustomerMenu(){
         driver.findElement(customer_menu).click();
         return this;
     }
@@ -45,10 +47,11 @@ public class GtList {
     }
 
     public String getTextSearchGt() {
-        String result1;
-        result1 = driver.findElement(result).getAttribute("content-desc");
-        return result1;
+        String result = driver.findElement(result_txt).getAttribute("content-desc");
+        return result;
     }
-
-
+    public String verifyL0(){
+        String result = driver.findElement(confirm_btn).getAttribute("content-desc");
+        return result;
+    }  
 }

@@ -22,7 +22,6 @@ public class Login {
     private By bottom_sheet = MobileBy.id("android:id/title");
     private By just_one = MobileBy.id("android:id/button_once");
     private By dffierent_app = MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.ListView/android.widget.LinearLayout");
-
     
    public Login (AppiumDriver<MobileElement> driver) {
       this.driver = driver;
