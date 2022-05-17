@@ -11,7 +11,7 @@ import io.appium.java_client.MobileElement;
 import utils.ScreenHandler;
 
 
-public class Login {
+public class LoginPage {
     
     AppiumDriver<MobileElement> driver;
 
@@ -23,7 +23,7 @@ public class Login {
     private By just_one = MobileBy.id("android:id/button_once");
     private By dffierent_app = MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.ListView/android.widget.LinearLayout");
     
-   public Login (AppiumDriver<MobileElement> driver) {
+   public LoginPage (AppiumDriver<MobileElement> driver) {
       this.driver = driver;
     }
 

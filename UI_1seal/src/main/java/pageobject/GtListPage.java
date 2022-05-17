@@ -10,7 +10,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
-public class GtList {
+public class GtListPage {
     
     AppiumDriver<MobileElement> driver;
     
@@ -24,13 +24,13 @@ public class GtList {
     By result_txt = MobileBy.xpath("//*[contains(@content-desc,\"Auto\")]");
     By confirm_btn = MobileBy.xpath("(//android.widget.Button[@content-desc=\"Xác minh\"])[1]");
 
-    public GtList(AppiumDriver<MobileElement> driver){
+    public GtListPage(AppiumDriver<MobileElement> driver){
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         driver.findElement(customer_menu).click();
         this.driver = driver;
     }
 
-    public GtList navigateCustomerMenu(){
+    public GtListPage navigateCustomerMenu(){
         driver.findElement(customer_menu).click();
         return this;
     }

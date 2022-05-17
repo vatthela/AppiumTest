@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import pageobject.GtList;
+import pageobject.GtListPage;
 
-public class Testcase3 {
+public class GtList {
     AppiumDriver<MobileElement> driver;
     //AppiumDriver<MobileElement> driver = null;
     GtList gtList = null;

@@ -11,7 +11,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
-public class HomeMenu {
+public class HomeMenuPage {
     AppiumDriver<MobileElement> driver;
     private By home_menu = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"im_avatar\"]");
     private By info = MobileBy.xpath("//android.view.View[@content-desc=\"Thông tin tài khoản\"]");
@@ -32,7 +32,7 @@ public class HomeMenu {
     //android.view.View[@content-desc="Thông tin tài khoản"]
 
 
-    public HomeMenu(AppiumDriver<MobileElement> driver) {
+    public HomeMenuPage(AppiumDriver<MobileElement> driver) {
         driver.findElement(home_menu).click();
         this.driver = driver;
     }
