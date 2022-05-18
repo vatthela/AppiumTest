@@ -7,19 +7,19 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import pageobject.HomeMenu;
-import pageobject.Login;
+import pageobject.HomeMenuPage;
+import pageobject.LoginPage;
 
-public class TC_Login {
+public class TC_001Login {
      static AppiumDriver<MobileElement> driver;
 
      @Test
      public void verifyLogin() throws Exception{
           AppiumDriver<MobileElement> driver = Driver.openApp();
-          Login login = new Login(driver);
+          LoginPage login = new LoginPage(driver);
           login.loginByAccount();
           Thread.sleep(3000);
-          HomeMenu homemenu = new HomeMenu(driver);
+          HomeMenuPage homemenu = new HomeMenuPage(driver);
           Assert.assertEquals(homemenu.getNameSa() , "Auto SA btl61");
           System.out.println(homemenu.getNameSa());
           homemenu.clickBack();

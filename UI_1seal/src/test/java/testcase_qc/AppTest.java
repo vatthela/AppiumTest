@@ -6,7 +6,7 @@ import org.testng.asserts.*;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import pageobject.HomeMenu;
+import pageobject.HomeMenuPage;
 import resource.Driver;
 
 
@@ -24,7 +24,7 @@ public class AppTest
     {   
         AppiumDriver<MobileElement> driver = Driver.openApp();
 
-        HomeMenu login = new HomeMenu(driver);
+        HomeMenuPage login = new HomeMenuPage(driver);
         login.moveInfo();
     }
 }

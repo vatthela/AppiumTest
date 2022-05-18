@@ -2,8 +2,8 @@ package testcase_qc;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import pageobject.HomeMenu;
-import pageobject.Login;
+import pageobject.HomeMenuPage;
+import pageobject.LoginPage;
 import resource.Driver;
 
 public class Test {

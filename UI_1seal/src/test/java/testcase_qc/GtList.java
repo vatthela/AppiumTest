@@ -1,11 +1,8 @@
 package testcase_qc;
 import resource.Driver;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -16,12 +13,12 @@ import pageobject.GtListPage;
 public class GtList {
     AppiumDriver<MobileElement> driver;
     //AppiumDriver<MobileElement> driver = null;
-    GtList gtList = null;
+    GtListPage gtList = null;
 
-    @BeforeTest  
-    public void navigate_customer_menu() throws Exception{ 
+    @BeforeClass  
+    public void navigateCustomerMenu() throws Exception{ 
         AppiumDriver<MobileElement> driver = Driver.openApp();
-        gtList = new GtList(driver);
+        gtList = new GtListPage(driver);
     }
 
     @DataProvider(name = "text_search_customer_L1")
@@ -34,13 +31,19 @@ public class GtList {
         return new Object[][] {{"0111770004"}};
     }
     
+    //Test List tab all, support, potential
+    @Test
+    public void verifyList(){
+        
+    }
+
     //Test Search GT L1
     @Test (priority = 1, dataProvider =  "text_search_customer_L1")
     public void verify_search_L1(String text_l1) throws Exception{
         gtList.clickSearchGt();
         gtList.sendKeySearchGt(text_l1);
         String actual = null;
-        if (gtList.getTextSearchGt().contains(text_l1) == true) {
+        if (gtList.getTextSearchGt(text_l1).contains(text_l1) == true) {
             actual = text_l1;  
             System.out.println(actual);
             Assert.assertEquals(actual , text_l1);
@@ -54,7 +57,7 @@ public class GtList {
         gtList.clickSearchGt();
         gtList.sendKeySearchGt(text_l0);
         String actual = null;
-        if (gtList.getTextSearchGt().contains(text_l0) == true) {
+        if (gtList.getTextSearchGt(text_l0).contains(text_l0) == true) {
             actual = text_l0; 
             System.out.println(actual);
             Assert.assertEquals(actual , text_l0);

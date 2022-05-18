@@ -1,6 +1,6 @@
 package pageobject;
 
-import pageobject.Login;
+import pageobject.LoginPage;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -33,7 +33,7 @@ public class App
         //System.out.println(driver);
         // Login login = new Login(driver);
         // login.loginByAccount();
-        Login login = new Login(driver);
+        LoginPage login = new LoginPage(driver);
         login.loginByAccount();
     }
     
