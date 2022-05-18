@@ -1,6 +1,6 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
-    "editor.inlayHints.enabled": false,
+    "editor.inlayHints.enabled": "on",
     "java.dependency.packagePresentation": "hierarchical",
     "java.test.config": {
         
