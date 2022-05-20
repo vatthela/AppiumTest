@@ -1,7 +1,9 @@
 package testcase_uat;
 
 import org.apache.tools.ant.taskdefs.condition.And;
+import org.aspectj.lang.annotation.After;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.appium.java_client.MobileElement;
@@ -10,9 +12,8 @@ import io.appium.java_client.AppiumDriver;
 import resource.Driver;
 
 
-public class TC_003ListGt {
+public class TC_ListGt {
     GtListPage gtList;
-
     @BeforeClass
     public void navigateCustomerMenu() throws Exception{ 
         AppiumDriver<MobileElement> driver = Driver.openApp();

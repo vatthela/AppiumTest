@@ -1,0 +1,7 @@
+utils\ScreenHandler.class
+pageobject\GtListPage.class
+pageobject\HomePageCdm.class
+pageobject\HomeMenuPage.class
+pageobject\LoginPage.class
+pageobject\HomePageSa.class
+pageobject\App.class

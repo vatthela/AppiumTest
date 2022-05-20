@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Time test Suite]">
+  <test thread-count="5" verbose="0" name="Group Test(failed)">
+    <classes>
+      <class name="testcase_uat.TC_SearchGt">
+        <methods>
+          <include name="navigateCustomerMenu"/>
+          <include name="verifySearchL0" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcase_uat.TC_SearchGt -->
+    </classes>
+  </test> <!-- Group Test(failed) -->
+</suite> <!-- Failed suite [Time test Suite] -->

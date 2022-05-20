@@ -3,6 +3,7 @@ package testcase_uat;
 import resource.Driver;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
@@ -10,9 +11,9 @@ import io.appium.java_client.MobileElement;
 import pageobject.HomeMenuPage;
 import pageobject.LoginPage;
 
-public class TC_001Login {
+public class TC_Login {
      static AppiumDriver<MobileElement> driver;
-
+     
      @Test
      public void verifyLogin() throws Exception{
           AppiumDriver<MobileElement> driver = Driver.openApp();

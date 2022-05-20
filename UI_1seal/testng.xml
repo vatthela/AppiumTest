@@ -1,0 +1,9 @@
+<suite name="Time test Suite" verbose="1">   
+	<test name="Group Test">     
+		<classes>       
+			<class name="testcase_uat.TC_Login" />
+			<class name="testcase_uat.TC_ListGt" />
+			<class name="testcase_uat.TC_SearchGt" />     
+		</classes>   
+	</test> 
+</suite> 

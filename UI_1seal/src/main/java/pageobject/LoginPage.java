@@ -30,7 +30,7 @@ public class LoginPage {
     public void loginByAccount() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(login_by_account).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(username).sendKeys("0396247761");
         driver.findElement(passsword).sendKeys("123456@");
         driver.findElement(countinue).click();

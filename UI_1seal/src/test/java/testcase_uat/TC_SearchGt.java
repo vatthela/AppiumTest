@@ -1,9 +1,9 @@
 package testcase_uat;
 import resource.Driver;
 
-import com.beust.jcommander.Parameter;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -14,7 +14,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import pageobject.GtListPage;
 
-public class TC_002SearchGt {
+public class TC_SearchGt {
     AppiumDriver<MobileElement> driver;
     //AppiumDriver<MobileElement> driver = null;
     GtListPage gtListPage = null;
@@ -27,7 +27,7 @@ public class TC_002SearchGt {
 
     @DataProvider(name = "text_search_customer_L1")
     public Object[][] data_L1(){
-        return new Object[][] {{"01117700011"}};
+        return new Object[][] {{"0111770001"}};
     }
 
     @DataProvider(name = "text_search_customer_L0")
@@ -44,12 +44,10 @@ public class TC_002SearchGt {
         if (gtListPage.getTextSearchGt(text_l1).contains(text_l1) == true) {
             actual = text_l1;
         } 
-        //gtListPage.clickCanCelSearchGt();
-        System.out.println(actual);
         try {
             Assert.assertEquals(actual , text_l1);
         } finally {
-            System.out.println("Bug finally");
+            System.out.println(actual);
             gtListPage.clickCanCelSearchGt();
         }   
     }

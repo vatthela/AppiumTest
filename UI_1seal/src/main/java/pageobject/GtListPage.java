@@ -36,9 +36,8 @@ public class GtListPage {
         this.driver = driver;
     }
 
-    public GtListPage navigateCustomerMenu(){
+    public void navigateCustomerMenu(){
         driver.findElement(customer_menu).click();
-        return this;
     }
     public void clickAllTab(){
         driver.findElement(all_tab).click();
