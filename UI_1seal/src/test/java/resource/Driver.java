@@ -31,6 +31,7 @@ public class Driver {
         URL url = new URL ("http://127.0.0.1:4723/wd/hub");
         //driver = new AppiumDriver<>(url,cap);
         driver = new AndroidDriver<>(url, cap);
+       
         System.out.println("App open");
         return driver;
     }

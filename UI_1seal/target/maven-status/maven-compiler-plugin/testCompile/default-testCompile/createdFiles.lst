@@ -1,6 +1,5 @@
 testcase_qc\Testcase1.class
 testcase_uat\TC_Login.class
-testcase_qc\GtList.class
 testcase_uat\TC_ListGt.class
 testcase_uat\TC_SearchGt.class
 testcase_qc\Testcase2.class

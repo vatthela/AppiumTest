@@ -6,7 +6,7 @@
       <class name="testcase_uat.TC_SearchGt">
         <methods>
           <include name="navigateCustomerMenu"/>
-          <include name="verifySearchL0" invocation-numbers="0"/>
+          <include name="verifySearchL1" invocation-numbers="0"/>
         </methods>
       </class> <!-- testcase_uat.TC_SearchGt -->
     </classes>

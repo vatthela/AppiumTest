@@ -13,16 +13,16 @@ import io.appium.java_client.MobileElement;
 
 public class HomeMenuPage {
     AppiumDriver<MobileElement> driver;
-    private By home_menu = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"im_avatar\"]");
-    private By info = MobileBy.xpath("//android.view.View[@content-desc=\"Thông tin tài khoản\"]");
-    private By kpi = MobileBy.AccessibilityId("Dự tính KPI và thưởng Mới");
-    private By time_sheets = MobileBy.xpath("//android.view.View[contains(@content-desc=\"Công hưởng lương\")]");
-    private By incentive = MobileBy.xpath("//android.view.View[@content-desc=\"Lương thưởng\"]");
-    private By user_guide = MobileBy.xpath("//android.view.View[@content-desc=\"Hướng dẫn sử dụng Mới\"]");
-    private By ticket = MobileBy.xpath("//android.view.View[@content-desc=\"Gửi yêu cầu hỗ trợ\"]");
-    private By techsupport = MobileBy.xpath("//android.view.View[@content-desc=\"Báo lỗi ứng dụng\"]");
-    private By policy = MobileBy.xpath("//android.view.View[@content-desc=\"Chính sách\"]");
-    private By logout = MobileBy.xpath("//android.view.View[@content-desc=\"Đăng xuất\"]");
+    private By homeMenu = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"im_avatar\"]");
+    private By info_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Thông tin tài khoản\"]");
+    private By kpi_tf = MobileBy.AccessibilityId("Dự tính KPI và thưởng Mới");
+    private By timeSheets_tf = MobileBy.xpath("//android.view.View[contains(@content-desc=\"Công hưởng lương\")]");
+    private By incentive_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Lương thưởng\"]");
+    private By userGuide_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Hướng dẫn sử dụng Mới\"]");
+    private By ticket_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Gửi yêu cầu hỗ trợ\"]");
+    private By techSupport_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Báo lỗi ứng dụng\"]");
+    private By policy_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Chính sách\"]");
+    private By logout_tf = MobileBy.xpath("//android.view.View[@content-desc=\"Đăng xuất\"]");
     private By logout_btn = MobileBy.xpath("//android.widget.Button[@content-desc=\"ĐĂNG XUẤT\"]");
     private By back_btn = MobileBy.AccessibilityId("btn_back");
 
@@ -33,36 +33,36 @@ public class HomeMenuPage {
 
 
     public HomeMenuPage(AppiumDriver<MobileElement> driver) {
-        driver.findElement(home_menu).click();
+        driver.findElement(homeMenu).click();
         this.driver = driver;
     }
     public void moveInfo(){
-        driver.findElement(info).click();
+        driver.findElement(info_tf).click();
     }
 
     public void moveTimeSheet(){
-        driver.findElement(time_sheets).click();
+        driver.findElement(timeSheets_tf).click();
     }
     public void moveKpi(){
-        driver.findElement(kpi).click();
+        driver.findElement(kpi_tf).click();
     }
     public void moveIncentive(){
-        driver.findElement(incentive).click();
+        driver.findElement(incentive_tf).click();
     }
     public void moveUserGuide(){
-        driver.findElement(user_guide).click();
+        driver.findElement(userGuide_tf).click();
     }
     public void moveTickete(){
-        driver.findElement(ticket).click();
+        driver.findElement(ticket_tf).click();
     }
     public void moveTechSupporte(){
-        driver.findElement(techsupport).click();
+        driver.findElement(techSupport_tf).click();
     }
     public void movePolicy(){
-        driver.findElement(policy).click();
+        driver.findElement(policy_tf).click();
     }
     public void moveLogout(){
-        driver.findElement(logout).click();
+        driver.findElement(logout_tf).click();
     }
     public void clickLogout(){
         driver.findElement(logout_btn).click();

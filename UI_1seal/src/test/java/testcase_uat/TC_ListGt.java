@@ -13,19 +13,19 @@ import resource.Driver;
 
 
 public class TC_ListGt {
-    GtListPage gtList;
+    GtListPage gtListPage;
     @BeforeClass
     public void navigateCustomerMenu() throws Exception{ 
         AppiumDriver<MobileElement> driver = Driver.openApp();
-        gtList = new GtListPage(driver);
+        gtListPage = new GtListPage(driver);
     }
 
     @Test ()
     public void verifyAllTab() throws Exception{
         String route = "X. Lại Thượng";
         String actual ="";
-        gtList.clickAllTab();
-        if (gtList.getTextRoute(route).contains(route) == true) {
+        gtListPage.clickAllTab();
+        if (gtListPage.getTextRoute(route).contains(route) == true) {
             actual = route;
         }
         try {
@@ -38,8 +38,8 @@ public class TC_ListGt {
     public void verifySupportTab() throws Exception{
         String route = "X. Dị Nậu";
         String actual ="";
-        gtList.clickSupportTab();
-        if (gtList.getTextRoute(route).contains(route) == true) {
+        gtListPage.clickSupportTab();
+        if (gtListPage.getTextRoute(route).contains(route) == true) {
             actual = route;
         }
         try {
@@ -54,17 +54,15 @@ public class TC_ListGt {
         String route = "X. Dị Nâu";
         String gt_name = "0111770005";
         String actual ="";
-        gtList.clickPotentialTab();
-        if (gtList.getTextRoute(route).contains(route) == true && gtList.getTextSearchGt(gt_name).contains(gt_name) == true ) {
+        gtListPage.clickPotentialTab();
+        if (gtListPage.getTextRoute(route).contains(route) == true && gtListPage.getTextSearchGt(gt_name).contains(gt_name) == true ) {
             actual = gt_name;
         }
         try {
             Assert.assertEquals(actual , gt_name);
-            Assert.assertEquals(gtList.verifyL0(), "Xác minh");
+            Assert.assertEquals(gtListPage.verifyL0(), "Xác minh");
         } finally{
             System.out.println(actual);
         }
-    }
-    }
-    
+    }   
 }

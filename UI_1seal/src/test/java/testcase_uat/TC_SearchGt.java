@@ -43,13 +43,13 @@ public class TC_SearchGt {
         String actual = null;  
         if (gtListPage.getTextSearchGt(text_l1).contains(text_l1) == true) {
             actual = text_l1;
-        } 
+        }      
         try {
             Assert.assertEquals(actual , text_l1);
         } finally {
             System.out.println(actual);
             gtListPage.clickCanCelSearchGt();
-        }   
+        }  
     }
 
     //Test Search GT L0
