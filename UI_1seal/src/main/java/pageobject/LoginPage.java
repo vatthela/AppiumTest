@@ -1,5 +1,8 @@
 package pageobject;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,7 +18,7 @@ public class LoginPage {
     
     AppiumDriver<MobileElement> driver;
 
-    private By login_by_account = MobileBy.AccessibilityId("Đăng nhập bằng tài khoản");
+    private By loginByAccount = MobileBy.AccessibilityId("Đăng nhập bằng tài khoản");
     private By username = MobileBy.xpath("//android.widget.EditText[@resource-id=\"username\"]");
     private By passsword = MobileBy.xpath("//android.widget.EditText[@resource-id=\"password\"]");
     private By countinue = MobileBy.xpath("//android.widget.Button[@text=\"Tiếp tục\"]");
@@ -29,7 +32,7 @@ public class LoginPage {
 
     public void loginByAccount() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElement(login_by_account).click();
+        driver.findElement(loginByAccount).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(username).sendKeys("0396247761");
         driver.findElement(passsword).sendKeys("123456@");
@@ -44,7 +47,12 @@ public class LoginPage {
             }         
         }
         
-        
+        // Create a neat value object to hold the URL
+
+// Manually converting the response body InputStream to APOD using Jackson
+
+// Finally we have the response
+
         //driver.findElementByXPath("//android.view.View[@content-desc=\"Đăng nhập bằng tài khoản\"]").click();
         //driver.findElementByAccessibilityId("Đăng nhập bằng tài khoản").click();
        

@@ -27,7 +27,7 @@ public class Driver {
         cap.setCapability("appActivity", "com.example.saler.MainActivity");
         cap.setCapability("fullReset", "false");
         cap.setCapability("noReset", "true");
-        //cap.setCapability("automationName", "uiautomator2");
+        cap.setCapability("automationName", "uiautomator2");
         URL url = new URL ("http://127.0.0.1:4723/wd/hub");
         //driver = new AppiumDriver<>(url,cap);
         driver = new AndroidDriver<>(url, cap);
@@ -37,7 +37,6 @@ public class Driver {
     }
 
     public static void clearDrive() {
-        driver.close();
         driver.quit();
     }
 }

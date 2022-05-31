@@ -33,11 +33,11 @@ public class GtListPage {
     By filter_icon = MobileBy.xpath("//*[contains(@content-desc,\"Bộ lọc\")]");
     By clearAllFilter_btn = MobileBy.AccessibilityId("Bỏ hết");
     By applyFilter_btn = MobileBy.AccessibilityId("Áp dụng");
-    By gtIsReported = MobileBy.xpath("//*[contains(@content-desc,\"Đã báo cáo, đang chờ xét duyệt\")]");
-    By gtIsVipStore = MobileBy.xpath("//*[contains(@content-desc,\"Đủ điều kiện tham gia trưng bày\")]");
+    By gtIsReported_tf = MobileBy.xpath("//*[contains(@content-desc,\"Đã báo cáo, đang chờ xét duyệt\")]");
+    By gtIsVipStore_tf = MobileBy.xpath("//*[contains(@content-desc,\"Đủ điều kiện tham gia trưng bày\")]");
 
     public GtListPage(AppiumDriver<MobileElement> driver){
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.findElement(customerMenu_tab).click();
         this.driver = driver;
     }
@@ -62,6 +62,12 @@ public class GtListPage {
 
     public void clickCanCelSearchGt() {
         driver.findElement(cancelSearch_icon).click();
+    }
+
+    public Boolean testIsdisplay(String search_text) {
+        By result_search_txt = MobileBy.xpath("//*[contains(@content-desc,\""+ search_text + "\")]");
+        Boolean resul = driver.findElement(result_search_txt).isDisplayed();
+        return resul;
     }
 
     public String getTextSearchGt(String search_text) {
@@ -100,7 +106,7 @@ public class GtListPage {
     public boolean getgtIsReported(){
         try{
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            String contentDesc = driver.findElement(gtIsReported).getAttribute("content-desc");
+            String contentDesc = driver.findElement(gtIsReported_tf).getAttribute("content-desc");
             if (contentDesc != null ){
                 return true;
             } else {
@@ -113,7 +119,7 @@ public class GtListPage {
     public boolean getGtIsVipStore(){
         try{
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            String contentDesc = driver.findElement(gtIsVipStore).getAttribute("content-desc");
+            String contentDesc = driver.findElement(gtIsVipStore_tf).getAttribute("content-desc");
             if (contentDesc != null ){
                 return true;
             } else {

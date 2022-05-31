@@ -20,7 +20,7 @@ public class TC_ListGt {
         gtListPage = new GtListPage(driver);
     }
 
-    @Test ()
+    @Test (priority = 1)
     public void verifyAllTab() throws Exception{
         String route = "X. Lại Thượng";
         String actual ="";
@@ -34,7 +34,7 @@ public class TC_ListGt {
             System.out.println(actual);
         } 
     }
-    @Test ()
+    @Test (priority = 2)
     public void verifySupportTab() throws Exception{
         String route = "X. Dị Nậu";
         String actual ="";
@@ -49,7 +49,7 @@ public class TC_ListGt {
         }   
     }
     
-    @Test ()
+    @Test (priority = 3)
     public void verifyPotentialTab() throws Exception{
         String route = "X. Dị Nâu";
         String gt_name = "0111770005";

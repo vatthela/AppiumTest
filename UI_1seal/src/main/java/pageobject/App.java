@@ -34,7 +34,6 @@ public class App
         // Login login = new Login(driver);
         // login.loginByAccount();
         LoginPage login = new LoginPage(driver);
-        login.loginByAccount();
     }
     
     

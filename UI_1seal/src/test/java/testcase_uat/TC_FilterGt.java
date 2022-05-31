@@ -1,10 +1,12 @@
 package testcase_uat;
 
+import org.aspectj.lang.annotation.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -95,4 +97,12 @@ public class TC_FilterGt {
             System.out.println(actual_route);
         }
     }
+    @AfterTest
+    public void closeTest() {
+        gtListPage.navigateFilter();
+        gtListPage.clearAllFilter();
+        gtListPage.applyFilter();
+        driver.quit();
+    }    
+    
 }
