@@ -37,8 +37,20 @@ public class TakePhoto {
         }
     }
 
-    public static void backHome(AppiumDriver<MobileElement> driver) {
+    public static boolean verifyBackHome(AppiumDriver<MobileElement> driver){
+        boolean status = false;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        try {
+            if (driver.findElement(backHome_btn).isDisplayed()) {
+                status = true;
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        return status;
+    }
+
+    public static void clickBackHome(AppiumDriver<MobileElement> driver){
         driver.findElement(backHome_btn).click();
     }
 }

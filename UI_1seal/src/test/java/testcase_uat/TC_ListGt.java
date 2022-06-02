@@ -64,5 +64,6 @@ public class TC_ListGt {
         } finally{
             System.out.println(actual);
         }
+        Driver.clearDrive();
     }   
 }

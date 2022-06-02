@@ -18,6 +18,7 @@ import utils.TakePhoto;
 public class TC_CheckInCheckoutGtdetail {
     AppiumDriver<MobileElement> driver;
     GtDetailPage gtDetailPage;
+    By backHome_btn = MobileBy.AccessibilityId("Về trang chủ");
 
     @BeforeClass
     public AppiumDriver<MobileElement> navigateGtdetail() throws Exception {
@@ -33,10 +34,10 @@ public class TC_CheckInCheckoutGtdetail {
                 gtDetailPage.checkIn();
             }
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
-            gtDetailPage.verifyStatusCheckInCheckout().equals("Check-out");
             gtDetailPage.checkOut();
             TakePhoto.takePhoto(driver);
-            
+            Assert.assertTrue(TakePhoto.verifyBackHome(driver));
+            TakePhoto.clickBackHome(driver);
         } catch (Exception e) {
             // TODO: handle exception
         }
@@ -44,13 +45,11 @@ public class TC_CheckInCheckoutGtdetail {
     }
 
     @Test(priority = 2)
-    public void verifyCheckInOtherGt() throws Exception {
+    public void verifyCheckInOtherGt() {
         try {
             gtDetailPage = new GtDetailPage(driver, "0111770011");
-            if (gtDetailPage.verifyStatusCheckInCheckout().equals("Check-in")) {
-                gtDetailPage.checkIn();
-                Thread.sleep(3000);
-            }
+            gtDetailPage.checkIn();
+            Thread.sleep(3000);
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
             gtDetailPage.closeGtDetail();
             By cancelSearch_icon = MobileBy.xpath("//android.view.View[@content-desc=\"Huỷ\"]");
@@ -59,11 +58,8 @@ public class TC_CheckInCheckoutGtdetail {
             gtDetailPage.checkIn();
             gtDetailPage.confirmCheckOut();
             TakePhoto.takePhoto(driver);
-            By backHome_btn = MobileBy.xpath("Về trang chủ");
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            Assert.assertTrue(driver.findElement(backHome_btn).isDisplayed());
-            driver.findElement(backHome_btn).click();
-            driver.quit();
+            Assert.assertTrue(TakePhoto.verifyBackHome(driver));
+            TakePhoto.clickBackHome(driver);
         } catch (Exception e) {
             // TODO: handle exception
         }
