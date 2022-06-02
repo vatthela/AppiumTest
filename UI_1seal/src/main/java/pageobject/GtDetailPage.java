@@ -34,7 +34,7 @@ public class GtDetailPage {
     public void checkOut(){
         driver.findElement(statusCheckOut_btn).click();
     }
-    
+
     public void confirmCheckOut(){
         driver.findElement(checkOut_btn).click();
     }
@@ -42,15 +42,15 @@ public class GtDetailPage {
     public String verifyStatusCheckInCheckout(){
         String status = null;
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-            if (driver.findElement(statusCheckIn_btn).getAttribute("content-desc").contains("Check-in") == true){
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            if (driver.findElement(statusCheckIn_btn).isDisplayed() == true){
                 status= "Check-in";
             }
         } catch(Exception e){
         }
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-            if (driver.findElement(statusCheckOut_btn).getAttribute("content-desc").contains("Check-out") == true) {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+            if (driver.findElement(statusCheckOut_btn).isDisplayed() == true) {
                 status= "Check-out";
             }
         } catch (Exception e) {

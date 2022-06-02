@@ -1,4 +1,4 @@
-package testcase_qc;
+package testcase_test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

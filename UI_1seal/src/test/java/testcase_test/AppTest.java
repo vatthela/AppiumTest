@@ -1,4 +1,4 @@
-package testcase_qc;
+package testcase_test;
 
 import java.io.File;
 
