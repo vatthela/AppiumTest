@@ -6,23 +6,25 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import pageobject.GtDetailPage;
 import pageobject.HomePageSa;
 import resource.Driver;
 import utils.TakePhoto;
 
-public class TC_CheckInCheckoutHome {
+public class TC_CheckInCheckOutHome {
     AppiumDriver<MobileElement> driver;
     HomePageSa homePageSa;
+
     @BeforeClass
     public AppiumDriver<MobileElement> navigateHomePage() throws Exception {
         driver = Driver.openApp();
         homePageSa = new HomePageSa(driver);
         return driver;
     }
+
     @Test(priority = 1)
-    public void verifyCheckInCheckOutNearBy() {
+    public void verifyCheckInCheckOutNearBy() throws Exception {
         try {
+            homePageSa.clickCheckIn();
             homePageSa.checkInList("0111770001");
             Assert.assertEquals(homePageSa.verifyStatusCheckInCheckout(), "Check-out");
             homePageSa.checkOut();
@@ -31,13 +33,13 @@ public class TC_CheckInCheckoutHome {
             TakePhoto.clickBackHome(driver);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
         }
 
     }
 
     @Test(priority = 2)
     public void verifyCheckInCheckOutSearch() throws Exception {
+        homePageSa = new HomePageSa(driver);
         try {
             homePageSa.clickCheckIn();
             homePageSa.findGtCheckIn("011177");
@@ -49,7 +51,6 @@ public class TC_CheckInCheckoutHome {
             TakePhoto.clickBackHome(driver);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
         }
     }
 }

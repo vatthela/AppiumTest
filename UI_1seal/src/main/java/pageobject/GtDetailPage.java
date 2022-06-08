@@ -15,14 +15,19 @@ public class GtDetailPage {
     By statusCheckOut_btn = MobileBy.AccessibilityId("Check-out");
     By checkOut_btn = MobileBy.xpath("//android.widget.Button[@content-desc=\"Check out\"]");
     
-    public GtDetailPage(AppiumDriver<MobileElement> driver, String gtName){
-        GtListPage gtListPage = new GtListPage(driver);
+    public GtDetailPage(AppiumDriver<MobileElement> driver){
         this.driver = driver;
+    }
+
+    public void 
+    navigateGtDetail(String gtName){
+        GtListPage gtListPage = new GtListPage(driver);
         gtListPage.clickSearchGt();
         gtListPage.sendKeySearchGt(gtName);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(MobileBy.xpath("//*[contains(@content-desc,\""+ gtName + "\")]")).click();;
     }
+        
     public void closeGtDetail(){
         driver.findElement(closeGtDetail_icon).click();
     }
@@ -56,5 +61,21 @@ public class GtDetailPage {
         } catch (Exception e) {
         }
         return status;
+    }
+
+    public void clickCloseTransportInfar() {
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        By clickCloseTransportInfar = MobileBy.AccessibilityId("accessibilityId");
+        driver.findElement(clickCloseTransportInfar).click();
+    }
+
+    public boolean verifyName(String gtName){
+        By status = MobileBy.xpath(gtName);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        if (driver.findElement(status).isDisplayed()) {
+            return true;
+        } else {
+            return false;
+        }  
     }
 }

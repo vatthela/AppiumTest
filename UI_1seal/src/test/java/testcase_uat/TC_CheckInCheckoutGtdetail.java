@@ -15,7 +15,7 @@ import pageobject.GtListPage;
 import resource.Driver;
 import utils.TakePhoto;
 
-public class TC_CheckInCheckoutGtdetail {
+public class TC_CheckInCheckOutGtDetail {
     AppiumDriver<MobileElement> driver;
     GtDetailPage gtDetailPage;
     By backHome_btn = MobileBy.AccessibilityId("Về trang chủ");
@@ -23,16 +23,15 @@ public class TC_CheckInCheckoutGtdetail {
     @BeforeClass
     public AppiumDriver<MobileElement> navigateGtdetail() throws Exception {
         driver = Driver.openApp();
-        gtDetailPage = new GtDetailPage(driver, "0111770011");
         return driver;
     }
 
     @Test(priority = 1)
     public void verifyCheckInCheckOut() {
         try {
-            if (gtDetailPage.verifyStatusCheckInCheckout().equals("Check-in")) {
-                gtDetailPage.checkIn();
-            }
+            gtDetailPage = new GtDetailPage(driver);
+            gtDetailPage.navigateGtDetail("0111770011");
+            gtDetailPage.checkIn();
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
             gtDetailPage.checkOut();
             TakePhoto.takePhoto(driver);
@@ -47,14 +46,16 @@ public class TC_CheckInCheckoutGtdetail {
     @Test(priority = 2)
     public void verifyCheckInOtherGt() {
         try {
-            gtDetailPage = new GtDetailPage(driver, "0111770011");
+            gtDetailPage = new GtDetailPage(driver);
+            gtDetailPage.navigateGtDetail("0111770011");
             gtDetailPage.checkIn();
             Thread.sleep(3000);
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
             gtDetailPage.closeGtDetail();
             By cancelSearch_icon = MobileBy.xpath("//android.view.View[@content-desc=\"Huỷ\"]");
             driver.findElement(cancelSearch_icon).click();
-            gtDetailPage = new GtDetailPage(driver, "0111770012");
+            gtDetailPage = new GtDetailPage(driver);
+            gtDetailPage.navigateGtDetail("0111770012");
             gtDetailPage.checkIn();
             gtDetailPage.confirmCheckOut();
             TakePhoto.takePhoto(driver);

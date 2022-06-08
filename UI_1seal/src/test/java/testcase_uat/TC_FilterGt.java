@@ -21,7 +21,7 @@ public class TC_FilterGt {
 
     GtListPage gtListPage;
     AppiumDriver<MobileElement> driver;
-    ScreenHandler screenHandler = new ScreenHandler();
+    
     @BeforeClass
     public AppiumDriver<MobileElement> navigateCustomerMenu() throws Exception{ 
         driver = Driver.openApp();
@@ -65,7 +65,7 @@ public class TC_FilterGt {
         gtListPage.applyFilter();
         if (gtListPage.getgtIsReported() == true){
             gtListPage.navigateFilter();        
-            screenHandler.swipeuUp(driver);
+            ScreenHandler.swipeuUp(driver);
             gtListPage.selectFilterGtReported();
             gtListPage.applyFilter();
             Assert.assertEquals(gtListPage.getgtIsReported() , false);
@@ -80,7 +80,7 @@ public class TC_FilterGt {
         gtListPage.navigateFilter();        
         gtListPage.clearAllFilter();
         gtListPage.selectFilterByRoute("X. Lại Thượng");
-        screenHandler.swipeuUp(driver);
+        ScreenHandler.swipeuUp(driver);
         gtListPage.selectFilterVipStore();
         gtListPage.selectFilterGtReported();
         gtListPage.applyFilter();

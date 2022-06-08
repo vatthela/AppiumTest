@@ -13,9 +13,9 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class ScreenHandler {
     
-    public void swipeuUp(AppiumDriver<MobileElement> appiumDriver){
+    public static void swipeuUp(AppiumDriver<MobileElement> driver){
         // Get mobile window size
-        Dimension windownSize = appiumDriver.manage().window().getSize();
+        Dimension windownSize = driver.manage().window().getSize();
         int screenHeight = windownSize.getHeight();
         int screenWidth = windownSize.getWidth();
 
@@ -31,13 +31,13 @@ public class ScreenHandler {
         PointOption endPoint = new PointOption().withCoordinates(xEndPoint, yEndPoint);
 
         //Perform Touch actions
-        TouchAction touchAction = new TouchAction(appiumDriver);
+        TouchAction touchAction = new TouchAction(driver);
         touchAction.press(startPoint).waitAction(new WaitOptions().withDuration(Duration.ofSeconds(2))).moveTo(endPoint).release().perform();
     }
 
-    public void swipeuDown(AppiumDriver<MobileElement> appiumDriver){
+    public static void swipeuDown(AppiumDriver<MobileElement> driver){
         // Get mobile window size
-        Dimension windownSize = appiumDriver.manage().window().getSize();
+        Dimension windownSize = driver.manage().window().getSize();
         int screenHeight = windownSize.getHeight();
         int screenWidth = windownSize.getWidth();
 
@@ -53,7 +53,7 @@ public class ScreenHandler {
         PointOption endPoint = new PointOption().withCoordinates(xEndPoint, yEndPoint);
 
         //Perform Touch actions
-        TouchAction touchAction = new TouchAction(appiumDriver);
+        TouchAction touchAction = new TouchAction(driver);
         touchAction.press(startPoint).waitAction(new WaitOptions().withDuration(Duration.ofSeconds(2))).moveTo(endPoint).release().perform();
     }
 

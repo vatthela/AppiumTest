@@ -3,12 +3,12 @@
 <suite verbose="0" name="Failed suite [Time test Suite]">
   <test thread-count="5" verbose="0" name="Group Test(failed)">
     <classes>
-      <class name="testcase_uat.TC_SearchGt">
+      <class name="testcase_uat.TC_CheckInCheckOutHome">
         <methods>
-          <include name="navigateCustomerMenu"/>
-          <include name="verifySearchL1" invocation-numbers="0"/>
+          <include name="navigateHomePage"/>
+          <include name="verifyCheckInCheckOutNearBy"/>
         </methods>
-      </class> <!-- testcase_uat.TC_SearchGt -->
+      </class> <!-- testcase_uat.TC_CheckInCheckOutHome -->
     </classes>
   </test> <!-- Group Test(failed) -->
 </suite> <!-- Failed suite [Time test Suite] -->

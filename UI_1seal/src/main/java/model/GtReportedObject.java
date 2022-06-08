@@ -7,7 +7,6 @@ public class GtReportedObject {
     public Pagination pagination;
     public ArrayList<Datum> data;
 
-
     public class Address{
         public int id;
         public int gt_id;

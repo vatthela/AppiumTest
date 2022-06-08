@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 21.33 s <<< FAILURE! - in TestSuite
-testcase_uat.TC_SearchGt.verifySearchL1[01117700011](1)  Time elapsed: 4.143 s  <<< FAILURE!
-java.lang.AssertionError: expected [01117700011] but found [null]
-	at testcase_uat.TC_SearchGt.verifySearchL1(TC_SearchGt.java:48)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.119 s - in TestSuite
