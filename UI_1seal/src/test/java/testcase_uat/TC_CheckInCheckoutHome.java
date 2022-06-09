@@ -15,10 +15,9 @@ public class TC_CheckInCheckOutHome {
     HomePageSa homePageSa;
 
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateHomePage() throws Exception {
+    public void init() throws Exception {
         driver = Driver.openApp();
         homePageSa = new HomePageSa(driver);
-        return driver;
     }
 
     @Test(priority = 1)

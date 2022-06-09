@@ -11,24 +11,19 @@ import model.GtReportedObject;
 public class ApiReportGtOPS {
 
     // Input variable "gt_id" or "gt_phone"
-    public static int apiGetGtIsReported(String type, int gt) {
+    public static String apiGetGtIsReported(String gt) {
         CommonGetAPI common = new CommonGetAPI();
-        String curl = "";
-        if (type == "gt_id") {
-            curl = "https://api-salestools-uat.int.vinid.dev/core/v1/gts/reports?gt_id=" + gt + "&status=WAITING";
-        }
-        if (type == "gt_phone") {
-            curl = "https://api-salestools-uat.int.vinid.dev/core/v1/gts/reports?gt_phone=" + gt + "&status=WAITING";
-        }
+        String curl = "https://api-salestools-uat.int.vinid.dev/core/v1/gts/reports?gt_phone=" + gt + "&status=WAITING";
         String basicAuth = "b3BzOjV1N2dpZDJZd004aXByR1Y=";
         String rs = common.getResponseFromAPI(curl, basicAuth, "GET");
+        System.out.println(rs);
         Gson gson = new Gson(); // Or use new GsonBuilder().create();
         GtReportedObject gtReportObject = gson.fromJson(rs, GtReportedObject.class);
-        int reportId = gtReportObject.data.get(0).id;
+        String reportId = String.valueOf(gtReportObject.data.get(0).id);
         return reportId;
     }
 
-    public static void apiRejectedReportGt(int reportId) throws IOException {
+    public static void apiRejectedReportGt(String reportId) throws IOException {
         URL url = new URL("https://api-salestools-uat.int.vinid.dev/core/v1/gts/reports/issue-status");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
@@ -43,7 +38,7 @@ public class ApiReportGtOPS {
         con.disconnect();
     }
 
-    public static void apiApprovedReportGt(int reportId) throws IOException {
+    public static void apiApprovedReportGt(String reportId) throws IOException {
         URL url = new URL("https://api-salestools-uat.int.vinid.dev/core/v1/gts/reports/issue-status");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");

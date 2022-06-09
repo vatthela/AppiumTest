@@ -28,7 +28,7 @@ public class TC_OnboardingGt {
     ReportGtPage reportGtPage;
     
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateCustomerMenu() throws Exception {
+    public AppiumDriver<MobileElement> init() throws Exception {
         driver = Driver.openApp();
         GtListPage gtListPage = new GtListPage(driver);
         return driver;
@@ -62,11 +62,15 @@ public class TC_OnboardingGt {
 
     @AfterTest
     public void reportGt(String phone) throws IOException {
-        int phoneNumber = Integer.parseInt(phone);
         reportGtPage = new ReportGtPage(driver);
         reportGtPage.selectReportGt("Sai ngành nghề kinh doanh");
         reportGtPage.clickSendReportGt();
-        int reportId = ApiReportGtOPS.apiGetGtIsReported("gt_phone", phoneNumber);
+        String reportId = ApiReportGtOPS.apiGetGtIsReported(phone);
+        ApiReportGtOPS.apiApprovedReportGt(reportId);
+    }
+
+    public static void main(String[] args) throws IOException {
+        String reportId = ApiReportGtOPS.apiGetGtIsReported("0115458874");
         ApiReportGtOPS.apiApprovedReportGt(reportId);
     }
 }

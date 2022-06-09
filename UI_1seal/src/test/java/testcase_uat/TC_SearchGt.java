@@ -20,7 +20,7 @@ public class TC_SearchGt {
     GtListPage gtListPage = null;
 
     @BeforeClass
-    public void navigateCustomerMenu() throws Exception{ 
+    public void init() throws Exception{ 
         AppiumDriver<MobileElement> driver = Driver.openApp();
         gtListPage = new GtListPage(driver);
     }

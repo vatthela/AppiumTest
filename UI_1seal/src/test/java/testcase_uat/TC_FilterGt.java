@@ -23,7 +23,7 @@ public class TC_FilterGt {
     AppiumDriver<MobileElement> driver;
     
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateCustomerMenu() throws Exception{ 
+    public AppiumDriver<MobileElement> init() throws Exception{ 
         driver = Driver.openApp();
         gtListPage = new GtListPage(driver);
         return driver;
@@ -63,12 +63,12 @@ public class TC_FilterGt {
         gtListPage.navigateFilter();        
         gtListPage.clearAllFilter();
         gtListPage.applyFilter();
-        if (gtListPage.getgtIsReported() == true){
+        if (gtListPage.getGtIsReported() == true){
             gtListPage.navigateFilter();        
-            ScreenHandler.swipeuUp(driver);
+            ScreenHandler.swipeuUp(driver, 20, 50);
             gtListPage.selectFilterGtReported();
             gtListPage.applyFilter();
-            Assert.assertEquals(gtListPage.getgtIsReported() , false);
+            Assert.assertEquals(gtListPage.getGtIsReported() , false);
         }
     }
         /*
@@ -80,7 +80,7 @@ public class TC_FilterGt {
         gtListPage.navigateFilter();        
         gtListPage.clearAllFilter();
         gtListPage.selectFilterByRoute("X. Lại Thượng");
-        ScreenHandler.swipeuUp(driver);
+        ScreenHandler.swipeuUp(driver, 20 , 50);
         gtListPage.selectFilterVipStore();
         gtListPage.selectFilterGtReported();
         gtListPage.applyFilter();
@@ -91,8 +91,8 @@ public class TC_FilterGt {
         }
         try {
             Assert.assertEquals(actual_route , "X. Lại Thượng");
-            Assert.assertEquals(gtListPage.getgtIsReported(), false);
-            Assert.assertEquals(gtListPage.getGtIsVipStore(), true);
+            Assert.assertFalse(gtListPage.getGtIsReported());
+            Assert.assertTrue(gtListPage.getGtIsVipStore());
         } finally {
             System.out.println(actual_route);
         }

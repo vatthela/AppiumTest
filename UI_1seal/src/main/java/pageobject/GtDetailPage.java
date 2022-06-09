@@ -14,13 +14,16 @@ public class GtDetailPage {
     By statusCheckIn_btn = MobileBy.AccessibilityId("Check-in");
     By statusCheckOut_btn = MobileBy.AccessibilityId("Check-out");
     By checkOut_btn = MobileBy.xpath("//android.widget.Button[@content-desc=\"Check out\"]");
-    
+    By searchProduct_it = MobileBy.AccessibilityId("btn_search_product Tìm sản phẩm chào hàng");
+    By editSearchProduct_it = MobileBy.xpath("xpathExpression");
+    By searchSpecialProduct_it = MobileBy.AccessibilityId("btn_search_product Tìm sản phẩm chào hàng");
+    By editSearchSpecialProduct_it = MobileBy.xpath("xpathExpression");
+
     public GtDetailPage(AppiumDriver<MobileElement> driver){
         this.driver = driver;
     }
 
-    public void 
-    navigateGtDetail(String gtName){
+    public void navigateGtDetailBySearch(String gtName){
         GtListPage gtListPage = new GtListPage(driver);
         gtListPage.clickSearchGt();
         gtListPage.sendKeySearchGt(gtName);
@@ -31,6 +34,17 @@ public class GtDetailPage {
     public void closeGtDetail(){
         driver.findElement(closeGtDetail_icon).click();
     }
+
+    //Product
+    public void clickSearchProduct(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(searchProduct_it).click();
+    }
+
+    public void sendKeySearchProduct(String text){
+        driver.findElement(editSearchProduct_it).click();
+    }
+
     //check-in/check-out
     public void checkIn(){
         driver.findElement(statusCheckIn_btn).click();

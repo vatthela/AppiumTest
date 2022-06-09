@@ -17,35 +17,42 @@ import pageobject.OnboardingPage;
 import pageobject.ReportGtPage;
 import resource.Driver;
 import utils.ApiReportGtOPS;
+import utils.ScreenHandler;
 import utils.TakePhoto;
 
 public class TC_ReportGt {
     AppiumDriver<MobileElement> driver;
+    GtListPage gtListPage;
     GtDetailPage gtDetailPage;
     ReportGtPage reportGtPage;
+
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateCustomerMenu() throws Exception {
+    public AppiumDriver<MobileElement> init() throws Exception {
         driver = Driver.openApp();
-        GtListPage gtListPage = new GtListPage(driver);
+        gtListPage = new GtListPage(driver);
         return driver;
     }
 
     // Report GT
     @Test(priority = 1)
-    public void verifyOnboardGt() {
+    public void verifyOnboardGt() throws InterruptedException {
         gtDetailPage = new GtDetailPage(driver);
-        gtDetailPage.navigateGtDetail("0111770013");
+        gtDetailPage.navigateGtDetailBySearch("0111770013");
         reportGtPage = new ReportGtPage(driver);
         reportGtPage.selectReportGt("Sai ngành nghề kinh doanh");
         reportGtPage.clickSendReportGt();
+        Thread.sleep(20000);
+        ScreenHandler.swipeuDown(driver, 50, 20);
+        try {
+            Assert.assertTrue(gtListPage.getGtIsVipStore());
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
     }
 
     @AfterTest
     public void reportGt() throws IOException {
-        reportGtPage = new ReportGtPage(driver);
-        reportGtPage.selectReportGt("Sai ngành nghề kinh doanh");
-        reportGtPage.clickSendReportGt();
-        int reportId = ApiReportGtOPS.apiGetGtIsReported("gt_id",12411);
-        ApiReportGtOPS.apiApprovedReportGt(reportId);
+        String reportId = ApiReportGtOPS.apiGetGtIsReported("0111770013");
+        ApiReportGtOPS.apiRejectedReportGt(reportId);
     }
 }

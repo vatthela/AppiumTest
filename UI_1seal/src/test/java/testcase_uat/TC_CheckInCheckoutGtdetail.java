@@ -21,16 +21,15 @@ public class TC_CheckInCheckOutGtDetail {
     By backHome_btn = MobileBy.AccessibilityId("Về trang chủ");
 
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateGtdetail() throws Exception {
+    public void init() throws Exception {
         driver = Driver.openApp();
-        return driver;
     }
 
     @Test(priority = 1)
     public void verifyCheckInCheckOut() {
         try {
             gtDetailPage = new GtDetailPage(driver);
-            gtDetailPage.navigateGtDetail("0111770011");
+            gtDetailPage.navigateGtDetailBySearch("0111770011");
             gtDetailPage.checkIn();
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
             gtDetailPage.checkOut();
@@ -47,7 +46,7 @@ public class TC_CheckInCheckOutGtDetail {
     public void verifyCheckInOtherGt() {
         try {
             gtDetailPage = new GtDetailPage(driver);
-            gtDetailPage.navigateGtDetail("0111770011");
+            gtDetailPage.navigateGtDetailBySearch("0111770011");
             gtDetailPage.checkIn();
             Thread.sleep(3000);
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
@@ -55,7 +54,7 @@ public class TC_CheckInCheckOutGtDetail {
             By cancelSearch_icon = MobileBy.xpath("//android.view.View[@content-desc=\"Huỷ\"]");
             driver.findElement(cancelSearch_icon).click();
             gtDetailPage = new GtDetailPage(driver);
-            gtDetailPage.navigateGtDetail("0111770012");
+            gtDetailPage.navigateGtDetailBySearch("0111770012");
             gtDetailPage.checkIn();
             gtDetailPage.confirmCheckOut();
             TakePhoto.takePhoto(driver);

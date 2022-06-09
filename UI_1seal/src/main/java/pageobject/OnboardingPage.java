@@ -29,6 +29,9 @@ public class OnboardingPage {
         this.driver = driver;
     }
 
+    private void init () {
+        
+    }
     // Default select Route X. Lại Thượng
 
     public void setInfoGt(String ownerName, String owerPhone, String gtName, String gtAndress, String gtFormat) {
@@ -41,7 +44,7 @@ public class OnboardingPage {
         driver.findElement(gtProvince).click();
         By gtDistrict = MobileBy.AccessibilityId("H. Thạch Thất");
         driver.findElement(gtDistrict).click();
-        ScreenHandler.swipeuUp(driver);
+        ScreenHandler.swipeuUp(driver, 50, 20);
         By gtWard = MobileBy.AccessibilityId("X. Lại Thượng");
         driver.findElement(gtWard).click();
         By gtStreetName = MobileBy.AccessibilityId("Số nhà và tên đường");

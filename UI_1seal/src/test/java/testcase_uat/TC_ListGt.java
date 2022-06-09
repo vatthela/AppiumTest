@@ -15,7 +15,7 @@ import resource.Driver;
 public class TC_ListGt {
     GtListPage gtListPage;
     @BeforeClass
-    public void navigateCustomerMenu() throws Exception{ 
+    public void init() throws Exception{ 
         AppiumDriver<MobileElement> driver = Driver.openApp();
         gtListPage = new GtListPage(driver);
     }

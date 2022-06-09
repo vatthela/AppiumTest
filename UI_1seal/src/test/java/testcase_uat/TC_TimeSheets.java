@@ -17,7 +17,7 @@ public class TC_TimeSheets {
     HomePageSa homePageSa;
 
     @BeforeClass
-    public AppiumDriver<MobileElement> navigateHomePage() throws Exception {
+    public AppiumDriver<MobileElement> init() throws Exception {
         driver = Driver.openApp();
         homeMenuPage = new HomeMenuPage(driver);
         return driver;

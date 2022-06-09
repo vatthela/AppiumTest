@@ -11,10 +11,6 @@ import io.appium.java_client.android.AndroidDriver;
 public class Driver {
 
     static AppiumDriver<MobileElement> driver;
-    
-    public Driver (AppiumDriver<MobileElement> driver){
-        this.driver = driver;
-    }
 
     public static AppiumDriver<MobileElement> openApp() throws Exception{
 

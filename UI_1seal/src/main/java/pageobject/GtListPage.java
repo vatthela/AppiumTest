@@ -113,7 +113,7 @@ public class GtListPage {
         return result;
     }
 
-    public boolean getgtIsReported() {
+    public boolean getGtIsReported() {
         try {
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             String contentDesc = driver.findElement(gtIsReported_tf).getAttribute("content-desc");
