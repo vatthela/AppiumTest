@@ -37,8 +37,8 @@ public class TC_OderProduct {
         gtDetailPage.navigateGtDetailBySearch("0111770014");
         ScreenHandler.swipeuUp(driver, 50, 20);
         gtDetailPage.clickSearchProduct();
-        String product = "PHVU Sữa nước tiệt trùng Nestle hương dâu trắng hộp";
-        plpPage.sendKeySearchProduct(product);
-        plpPage.clickPDP(product);
+        String productName = "PHVU Sữa nước tiệt trùng Nestle hương dâu trắng hộp 180ml";
+        plpPage.sendKeySearchProduct(productName);
+        plpPage.clickPDP(productName);
     }
 }

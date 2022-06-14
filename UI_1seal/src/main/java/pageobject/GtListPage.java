@@ -1,20 +1,11 @@
 package pageobject;
 
-import java.util.List;
+
 import java.util.concurrent.TimeUnit;
-
-import javax.lang.model.element.Element;
-import javax.lang.model.util.Elements;
-
-import org.apache.http.util.Asserts;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.util.Assert;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import utils.MobileActions;
 
 public class GtListPage {
 

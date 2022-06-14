@@ -86,12 +86,10 @@ public class HomePageSa {
     }
 
     // Create a call valid (waiting 70s)
-    public void checkInValid(String gtName, boolean checkInValid) throws Exception{
+    public void checkInValid(String gtName) throws Exception{
         clickCheckIn();
         checkInList(gtName);
-        if (checkInValid == true) {
-            Thread.sleep(70000);
-        }
+        Thread.sleep(70000);
         checkOut();
         TakePhoto.takePhoto(driver);
         TakePhoto.clickBackHome(driver);

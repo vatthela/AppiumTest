@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
@@ -21,6 +22,8 @@ public class TC_FilterGt {
 
     GtListPage gtListPage;
     AppiumDriver<MobileElement> driver;
+    
+
     
     @BeforeClass
     public AppiumDriver<MobileElement> init() throws Exception{ 

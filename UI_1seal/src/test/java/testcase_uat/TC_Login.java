@@ -1,7 +1,6 @@
 package testcase_uat;
 
 import resource.Driver;
-import utils.MobileActions;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;

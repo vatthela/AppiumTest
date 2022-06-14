@@ -33,7 +33,7 @@ public class TC_TimeSheets {
         homeMenuPage.clickBack();
         homeMenuPage.clickBack();
         homePageSa.clickCheckIn();
-        homePageSa.checkInValid("0111770001", true);
+        homePageSa.checkInValid("0111770001");
         homeMenuPage = new HomeMenuPage(driver);
         homeMenuPage.moveTimeSheet();
         int newTimeSheets = homeMenuPage.getTimeSheets();
@@ -43,30 +43,6 @@ public class TC_TimeSheets {
             Assert.assertEquals(oldTimeSheets + 1, newTimeSheets);
             Assert.assertEquals(oldtNumberCheckIn + 1, newtNumberCheckIn);
             Assert.assertEquals(newStatusWorkDays, 1);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-        }
-    }
-
-    @Test(priority = 2)
-    public void verifyHistory() throws Exception {
-        homeMenuPage.moveTimeSheet();
-        int oldTimeSheets = homeMenuPage.getTimeSheets();
-        int oldtNumberCheckIn = homeMenuPage.getNumberCheckIn();
-        String oldStatusWorkDays = homeMenuPage.getStatusWorkDays();
-        homeMenuPage.clickBack();
-        homeMenuPage.clickBack();
-        homePageSa.checkInValid("0111770001", true);
-        homeMenuPage = new HomeMenuPage(driver);
-        homeMenuPage.moveTimeSheet();
-        int newTimeSheets = homeMenuPage.getTimeSheets();
-        int newtNumberCheckIn = homeMenuPage.getNumberCheckIn();
-        String newStatusWorkDays = homeMenuPage.getStatusWorkDays();
-        try {
-            Assert.assertEquals(oldTimeSheets + 1, newTimeSheets);
-            Assert.assertEquals(oldtNumberCheckIn + 1, newtNumberCheckIn);
-            Assert.assertEquals(newStatusWorkDays, 1);
-
         } catch (Exception e) {
             // TODO Auto-generated catch block
         }
