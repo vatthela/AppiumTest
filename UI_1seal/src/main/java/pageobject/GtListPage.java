@@ -15,8 +15,7 @@ public class GtListPage {
     By support_tab = MobileBy.xpath("//android.view.View[contains(@content-desc,\"Chăm sóc\")]");
     By potential_tab = MobileBy.xpath("//android.view.View[contains(@content-desc,\"Tiềm năng\")]");
     By search_it = MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Tìm kiếm tên GT, SĐT, địa chỉ\"]");
-    By editSearch_it = MobileBy.xpath(
-            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.widget.EditText");
+    By editSearch_it = MobileBy.xpath("//*[contains(@text, \"Tìm kiếm tên GT, SĐT, địa chỉ\")]");
     By cancelSearch_icon = MobileBy.xpath("//android.view.View[@content-desc=\"Huỷ\"]");
     By resultSearch_tf = MobileBy.xpath("//*[contains(@content-desc,\"Auto\")]");
     By confirm_btn = MobileBy.xpath("(//android.widget.Button[@content-desc=\"Xác minh\"])[1]");

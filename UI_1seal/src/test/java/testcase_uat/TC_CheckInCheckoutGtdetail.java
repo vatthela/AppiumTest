@@ -30,9 +30,9 @@ public class TC_CheckInCheckOutGtDetail {
         try {
             gtDetailPage = new GtDetailPage(driver);
             gtDetailPage.navigateGtDetailBySearch("0111770011");
-            gtDetailPage.checkIn();
+            gtDetailPage.clickCheckIn();
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
-            gtDetailPage.checkOut();
+            gtDetailPage.clickCheckOut();
             TakePhoto.takePhoto(driver);
             Assert.assertTrue(TakePhoto.verifyBackHome(driver));
             TakePhoto.clickBackHome(driver);
@@ -47,7 +47,7 @@ public class TC_CheckInCheckOutGtDetail {
         try {
             gtDetailPage = new GtDetailPage(driver);
             gtDetailPage.navigateGtDetailBySearch("0111770011");
-            gtDetailPage.checkIn();
+            gtDetailPage.clickCheckIn();
             Thread.sleep(3000);
             Assert.assertEquals(gtDetailPage.verifyStatusCheckInCheckout(), "Check-out");
             gtDetailPage.closeGtDetail();
@@ -55,7 +55,7 @@ public class TC_CheckInCheckOutGtDetail {
             driver.findElement(cancelSearch_icon).click();
             gtDetailPage = new GtDetailPage(driver);
             gtDetailPage.navigateGtDetailBySearch("0111770012");
-            gtDetailPage.checkIn();
+            gtDetailPage.clickCheckIn();
             gtDetailPage.confirmCheckOut();
             TakePhoto.takePhoto(driver);
             Assert.assertTrue(TakePhoto.verifyBackHome(driver));

@@ -10,6 +10,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import pageobject.GtListPage;
 import pageobject.HomeMenuPage;
 import pageobject.LoginPage;
 
@@ -26,6 +27,5 @@ public class TC_Login {
           Assert.assertEquals(homemenu.getNameSa() , "Auto SA btl61");
           System.out.println(homemenu.getNameSa());
           homemenu.clickBack();
-     }
 }
 

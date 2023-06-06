@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 
 public class GtDetailPage {
     AppiumDriver<MobileElement> driver;
-    By closeGtDetail_icon = MobileBy.AccessibilityId("btn_close");
+    By closeGtDetail_btn = MobileBy.AccessibilityId("btn_close");
     By statusCheckIn_btn = MobileBy.AccessibilityId("Check-in");
     By statusCheckOut_btn = MobileBy.AccessibilityId("Check-out");
     By checkOut_btn = MobileBy.xpath("//android.widget.Button[@content-desc=\"Check out\"]");
@@ -32,7 +32,7 @@ public class GtDetailPage {
     }
         
     public void closeGtDetail(){
-        driver.findElement(closeGtDetail_icon).click();
+        driver.findElement(closeGtDetail_btn).click();
     }
 
     //Product
@@ -46,11 +46,11 @@ public class GtDetailPage {
     }
 
     //check-in/check-out
-    public void checkIn(){
+    public void clickCheckIn(){
         driver.findElement(statusCheckIn_btn).click();
     }
 
-    public void checkOut(){
+    public void clickCheckOut(){
         driver.findElement(statusCheckOut_btn).click();
     }
 

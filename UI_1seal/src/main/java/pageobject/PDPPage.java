@@ -8,8 +8,8 @@ import io.appium.java_client.MobileElement;
 
 public class PDPPage {
     AppiumDriver<MobileElement> driver;
-    By decreaseProduct_btn = MobileBy.AccessibilityId("Báo cáo");
-    By increaseProduct_btn = MobileBy.AccessibilityId("Họ và tên chủ cửa hàng");  
+    By decreaseProduct_btn = MobileBy.AccessibilityId("");
+    By increaseProduct_btn = MobileBy.AccessibilityId("");  
     By numberProduct_it = MobileBy.xpath("//android.view.View[@content-desc=\"Số lượng: \"]/android.widget.EditText");
     By addProductToCart_btn = MobileBy.AccessibilityId("Thêm vào giỏ hàng");
 
