@@ -22,7 +22,7 @@ import utils.ApiReportGtOPS;
 import utils.GenarateRandomData;
 import utils.TakePhoto;
 
-public class TC_OnboardingGt {
+public class TC_OnboardingGT {
     AppiumDriver<MobileElement> driver;
     GtDetailPage gtDetailPage;
     ReportGtPage reportGtPage;

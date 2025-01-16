@@ -28,7 +28,7 @@ public class GtListPage {
     By gtIsVipStore_tf = MobileBy.xpath("//*[contains(@content-desc,\"Đủ điều kiện tham gia trưng bày\")]");
 
     public GtListPage(AppiumDriver<MobileElement> driver) {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(customerMenu_tab).click();
         this.driver = driver;
     }
@@ -70,7 +70,7 @@ public class GtListPage {
     public String getTextSearchGt(String search_text) {
         String result = "";
         MobileElement element = null;
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         By result_search_txt = MobileBy.xpath("//*[contains(@content-desc,\"" + search_text + "\")]");
         try {
             element = driver.findElement(result_search_txt);
@@ -105,7 +105,7 @@ public class GtListPage {
 
     public boolean getGtIsReported() {
         try {
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             String contentDesc = driver.findElement(gtIsReported_tf).getAttribute("content-desc");
             if (contentDesc != null) {
                 return true;
@@ -119,7 +119,7 @@ public class GtListPage {
 
     public boolean getGtIsVipStore() {
         try {
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             String contentDesc = driver.findElement(gtIsVipStore_tf).getAttribute("content-desc");
             if (contentDesc != null) {
                 return true;
@@ -133,12 +133,12 @@ public class GtListPage {
 
     // Filter
     public void navigateFilter() {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(filter_icon).click();
     }
 
     public void clearAllFilter() {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(clearAllFilter_btn).click();
     }
 

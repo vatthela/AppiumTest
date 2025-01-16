@@ -27,5 +27,5 @@ public class TC_Login {
           Assert.assertEquals(homemenu.getNameSa() , "Auto SA btl61");
           System.out.println(homemenu.getNameSa());
           homemenu.clickBack();
+     }
 }
-

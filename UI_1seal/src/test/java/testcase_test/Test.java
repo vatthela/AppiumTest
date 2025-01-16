@@ -6,6 +6,8 @@ import pageobject.HomeMenuPage;
 import pageobject.LoginPage;
 import resource.Driver;
 
+
+
 public class Test {
     static AppiumDriver<MobileElement> driver;
     public static void main(String[] args) throws Exception{
@@ -29,3 +31,4 @@ public class Test {
         System.out.println("Your name is: " + name[1]);
     }
 }
+

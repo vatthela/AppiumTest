@@ -15,7 +15,7 @@ import pageobject.GtListPage;
 import resource.Driver;
 import utils.TakePhoto;
 
-public class TC_CheckInCheckOutGtDetail {
+public class TC_CheckInCheckoutGtdetail {
     AppiumDriver<MobileElement> driver;
     GtDetailPage gtDetailPage;
     By backHome_btn = MobileBy.AccessibilityId("Về trang chủ");

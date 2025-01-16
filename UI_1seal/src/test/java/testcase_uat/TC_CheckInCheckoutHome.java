@@ -10,7 +10,7 @@ import pageobject.HomePageSa;
 import resource.Driver;
 import utils.TakePhoto;
 
-public class TC_CheckInCheckOutHome {
+public class TC_CheckInCheckoutHome {
     AppiumDriver<MobileElement> driver;
     HomePageSa homePageSa;
 

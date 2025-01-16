@@ -17,7 +17,7 @@ public class Driver {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("deviceName", "Android SDK built for x86_64");
         cap.setCapability("platformName", "Android");
-        cap.setCapability("platformVersion", "10");
+        cap.setCapability("platformVersion", "12");
         cap.setCapability("appPackage", "com.vingroup.oneseal.UAT");
         cap.setCapability("unicodeKeyboard", "true");
         cap.setCapability("appActivity", "com.example.saler.MainActivity");
