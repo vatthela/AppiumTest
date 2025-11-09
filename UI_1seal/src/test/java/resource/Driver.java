@@ -1,5 +1,6 @@
 package resource;
 
+import java.net.URI;
 import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,7 +25,10 @@ public class Driver {
         cap.setCapability("fullReset", "false");
         cap.setCapability("noReset", "true");
         cap.setCapability("automationName", "uiautomator2");
-        URL url = new URL ("http://127.0.0.1:4723/wd/hub");
+        URI uri = URI.create("http://127.0.0.1:4723/wd/hub");
+        URL url = uri.toURL();
+        
+        //URL url = new URL ("http://127.0.0.1:4723/wd/hub");
         //driver = new AppiumDriver<>(url,cap);
         driver = new AndroidDriver<>(url, cap);
        

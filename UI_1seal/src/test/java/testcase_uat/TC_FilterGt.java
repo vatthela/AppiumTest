@@ -23,8 +23,6 @@ public class TC_FilterGt {
     GtListPage gtListPage;
     AppiumDriver<MobileElement> driver;
     
-
-    
     @BeforeClass
     public AppiumDriver<MobileElement> init() throws Exception{ 
         driver = Driver.openApp();
